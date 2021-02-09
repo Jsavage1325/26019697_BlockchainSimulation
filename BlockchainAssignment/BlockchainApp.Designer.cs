@@ -48,6 +48,7 @@
             this.showAllBlocks = new System.Windows.Forms.Button();
             this.showPendingTransactions = new System.Windows.Forms.Button();
             this.validateBlockchain = new System.Windows.Forms.Button();
+            this.balanceCheck = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -228,12 +229,23 @@
             this.validateBlockchain.UseVisualStyleBackColor = true;
             this.validateBlockchain.Click += new System.EventHandler(this.validateBlockchain_Click);
             // 
+            // balanceCheck
+            // 
+            this.balanceCheck.Location = new System.Drawing.Point(382, 594);
+            this.balanceCheck.Name = "balanceCheck";
+            this.balanceCheck.Size = new System.Drawing.Size(109, 48);
+            this.balanceCheck.TabIndex = 26;
+            this.balanceCheck.Text = "Check Balance";
+            this.balanceCheck.UseVisualStyleBackColor = true;
+            this.balanceCheck.Click += new System.EventHandler(this.balanceCheck_Click);
+            // 
             // BlockchainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(908, 645);
+            this.Controls.Add(this.balanceCheck);
             this.Controls.Add(this.validateBlockchain);
             this.Controls.Add(this.showPendingTransactions);
             this.Controls.Add(this.showAllBlocks);
@@ -286,6 +298,7 @@
         private System.Windows.Forms.Button showAllBlocks;
         private System.Windows.Forms.Button showPendingTransactions;
         private System.Windows.Forms.Button validateBlockchain;
+        private System.Windows.Forms.Button balanceCheck;
     }
 }
 

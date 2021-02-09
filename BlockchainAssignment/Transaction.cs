@@ -44,7 +44,6 @@ public class Transaction
 		}
 		return hash;
 	}
-
 	public String getTransactionData()
     {
 		String data = "Transaction Hash: " + hash + "\nDigital Signature: " + signature + "\nTimestamp: " + timeStamp + "\nTransferred: " + coins + " FunkyCoins\nFees: " + fee + "\nSender Address: " + senderAddress + "\nRecipient Address: " + recipientAddress;
@@ -54,5 +53,30 @@ public class Transaction
 	public double getFee()
     {
 		return fee;
+    }
+
+	public String getRecipient()
+    {
+		return recipientAddress;
+    }
+
+	public String getSender()
+    {
+		return senderAddress;
+    }
+
+	public double getCoins()
+    {
+		return coins;
+    }
+
+	public String getHash()
+    {
+		return hash;
+    }
+
+	public String getSignature()
+    {
+		return signature;
     }
 }

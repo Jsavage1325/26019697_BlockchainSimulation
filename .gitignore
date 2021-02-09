@@ -1,0 +1,6 @@
+debug/
+.vs/
+*.sln
+*.config
+*.resx
+*.csproj
