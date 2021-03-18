@@ -117,7 +117,7 @@ namespace BlockchainAssignment
             }
             
             // add new block
-            blockchain.addBlock(new Block(blockchain.getBlockchainSize(), blockchain.getLastBlock().getHash(), blockchain.pendingTransactions, publicKey.Text, transactionSelection, preferredAddress));
+            blockchain.addBlock(new Block(blockchain.getBlockchainSize(), blockchain.getLastBlock().getHash(), blockchain.pendingTransactions, publicKey.Text, transactionSelection, preferredAddress, blockchain.getLastBlock().getNewDifficulty()));
             richTextBox1.Text = blockchain.getLastBlock().getData();
         }
 

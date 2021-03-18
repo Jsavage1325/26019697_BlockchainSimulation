@@ -19,15 +19,19 @@ namespace BlockchainAssignment
         String prevHash;
         List<Transaction> transactionList = new List<Transaction>();
         int nonce = 0;
-        double difficulty = 5;
+        int difficulty;
+        int newDifficulty;
         double reward;
         String minerAddress;
         double fees = 0;
         String merkleRoot;
+        TimeSpan expectedBlockTime = TimeSpan.FromMinutes(2);
+        TimeSpan blockTime;
 
 
-        public Block(int prevIndex, String previousHash, List<Transaction> pendingTransactions, String MinerAddress, String transactionSelection, String preferredAddress)
+        public Block(int prevIndex, String previousHash, List<Transaction> pendingTransactions, String MinerAddress, String transactionSelection, String preferredAddress, int prevDifficulty)
         {
+            difficulty = prevDifficulty;
             // create stopwatch instance and start
             Stopwatch s = new Stopwatch();
             s.Start();
@@ -52,7 +56,11 @@ namespace BlockchainAssignment
             string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
             ts.Hours, ts.Minutes, ts.Seconds,
             ts.Milliseconds / 10);
+            // set blocktime equal to the time taken to mine
+            blockTime = ts;
             Console.WriteLine("RunTime " + elapsedTime);
+            // change the difficulty at the end of the block
+            // increaseDecreaseDifficulty();
         }
 
         public Block()
@@ -61,6 +69,28 @@ namespace BlockchainAssignment
             time = DateTime.Now;
             prevHash = "";
             hash = Mine();
+            // difficulty = 5 to start
+            difficulty = 5;
+        }
+
+        public TimeSpan getBlockTime()
+        {
+            return blockTime;
+        }
+
+        // this function checks to see if the block time was less/more than expected
+        public void increaseDecreaseDifficulty()
+        {
+            if (blockTime < expectedBlockTime)
+            {
+                // increase difficulty for next block
+                newDifficulty = difficulty + 1;
+            }
+            else if (blockTime > expectedBlockTime)
+            {
+                // decrease difficulty for next block
+                newDifficulty = difficulty - 1;
+            }
         }
 
 
@@ -218,6 +248,11 @@ namespace BlockchainAssignment
                     }
                 }
             }
+        }
+
+        public int getNewDifficulty()
+        {
+            return newDifficulty;
         }
     
         private void MineThreaded()
