@@ -13,6 +13,7 @@ public class Transaction
 	private double coins;
 	private double fee;
 
+	// constructor to build a transaction
 	public Transaction(String senderAddress, String recipientAddress, double coins, double fee, String senderPrivKey)
 	{
 		this.timeStamp = DateTime.Now;
@@ -44,6 +45,8 @@ public class Transaction
 		}
 		return hash;
 	}
+
+	// this function returns the data about an individual transaction and is used when presenting data on the gui
 	public String getTransactionData()
     {
 		String data = "Transaction Hash: " + hash + "\nDigital Signature: " + signature + "\nTimestamp: " + timeStamp + "\nTransferred: " + coins + " FunkyCoins\nFees: " + fee + "\nSender Address: " + senderAddress + "\nRecipient Address: " + recipientAddress;

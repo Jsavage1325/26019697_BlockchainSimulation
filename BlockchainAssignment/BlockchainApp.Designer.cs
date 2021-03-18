@@ -49,6 +49,10 @@
             this.showPendingTransactions = new System.Windows.Forms.Button();
             this.validateBlockchain = new System.Windows.Forms.Button();
             this.balanceCheck = new System.Windows.Forms.Button();
+            this.miningSettings = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.addressPreference = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -239,12 +243,54 @@
             this.balanceCheck.UseVisualStyleBackColor = true;
             this.balanceCheck.Click += new System.EventHandler(this.balanceCheck_Click);
             // 
+            // miningSettings
+            // 
+            this.miningSettings.FormattingEnabled = true;
+            this.miningSettings.Items.AddRange(new object[] {
+            "Greedy",
+            "Altruitistic",
+            "Random",
+            "Address Preference"});
+            this.miningSettings.Location = new System.Drawing.Point(684, 426);
+            this.miningSettings.Name = "miningSettings";
+            this.miningSettings.Size = new System.Drawing.Size(155, 24);
+            this.miningSettings.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(544, 427);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 17);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Transaction Pick";
+            // 
+            // addressPreference
+            // 
+            this.addressPreference.Location = new System.Drawing.Point(684, 455);
+            this.addressPreference.Name = "addressPreference";
+            this.addressPreference.Size = new System.Drawing.Size(155, 22);
+            this.addressPreference.TabIndex = 29;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(544, 459);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(134, 17);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Address Preference";
+            // 
             // BlockchainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(908, 645);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.addressPreference);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.miningSettings);
             this.Controls.Add(this.balanceCheck);
             this.Controls.Add(this.validateBlockchain);
             this.Controls.Add(this.showPendingTransactions);
@@ -299,6 +345,10 @@
         private System.Windows.Forms.Button showPendingTransactions;
         private System.Windows.Forms.Button validateBlockchain;
         private System.Windows.Forms.Button balanceCheck;
+        private System.Windows.Forms.ComboBox miningSettings;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox addressPreference;
+        private System.Windows.Forms.Label label7;
     }
 }
 
