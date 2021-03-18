@@ -36,7 +36,7 @@ namespace BlockchainAssignment
             index = prevIndex++;
             prevHash = previousHash;
             /// before the hash is generated we are going to want to add up to 5 of the pending transactions to our block
-            
+            getTransactions(pendingTransactions, transactionSelection, preferredAddress);
 
             // Simple reward of one coin for now (will also be plus fees)
             reward = 1;
